@@ -10,9 +10,7 @@ A Chrome extension that visualizes binary trees, enabling users to interactively
 
 ## Screenshots
 
-*Include screenshots or GIFs of your extension in action.*
-
-## Installation
+### Main Interface
 
 1. **Clone the Repository:**
     ```bash
