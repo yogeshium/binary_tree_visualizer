@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Tree Visualizer</title>
     <link rel="stylesheet" href="popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <label for="inputField">
-            Enter the Nodes in level wise order. For null, use 'X'
+            Enter the Nodes in level wise order. For null, use 'N'
         </label>
         <label for="inputField">
-            eg: 1 2 3 X X X
+            eg: 1 2 3 N N N
         </label>
+        <div id="errorMessage" class="hide">Failed to parse your input, please check again</div>
         <textarea id="inputField" name="inputField" rows="1" placeholder="Type here..."></textarea>
         <canvas id="treeCanvas"></canvas>
     </div>
