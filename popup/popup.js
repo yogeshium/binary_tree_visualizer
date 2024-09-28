@@ -154,8 +154,6 @@ const regex =
 
 const inputField = document.getElementById("inputField");
 const canvas = document.getElementById("treeCanvas");
-canvas.width = Math.min(window.innerHeight, window.innerWidth);
-canvas.height = canvas.width;
 const ctx = canvas.getContext("2d");
 const errorMessage = document.getElementById("errorMessage");
 
@@ -163,7 +161,8 @@ const errorMessage = document.getElementById("errorMessage");
 inputField.addEventListener("input", (e) => {
   inputField.style.height = "auto"; // Reset the height
   inputField.style.height = this.scrollHeight + "px"; // Adjust height to content
-  if (!regex.test(e.target.value)) {
+  if(e.target.value==="") ctx.clearRect(0, 0, canvas.width, canvas.height);
+  else if (!regex.test(e.target.value)) {
     //Showing error message 
     inputField.classList.add("invalid");
     errorMessage.classList.remove("hide");
@@ -180,14 +179,14 @@ inputField.addEventListener("input", (e) => {
       inputField.classList.remove("invalid");
       errorMessage.classList.remove("show");
       errorMessage.classList.add("hide");
-
+  
 /* Now we start making tree in canvas: */
 
       //clear the canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+      
       let x = canvas.width / 2,
-        y = canvas.getBoundingClientRect().top + window.scrollY,
+        y = 50,
         xspace = canvas.width / 4,
         yspace = canvas.height / 8;
       radius = canvas.width / 30;
